@@ -72,10 +72,7 @@ for message in st.session_state.messages:
 # React to user input          
 prompt = st.chat_input(" ")  
 
-if prompt == 'thanks'.lower():
-    st.image('job_done.jpg')
-
-elif prompt:
+if prompt:
     
     # Display user message in chat message container
     st.chat_message("user").markdown(prompt)
@@ -89,6 +86,7 @@ elif prompt:
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.messages
             ],
+            temperature=0.2,
             stream=True
         )
         response = st.write_stream(stream)

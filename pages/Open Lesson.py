@@ -66,7 +66,8 @@ if prompt:
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.messages
             ],
-            stream=True
+            stream=True, 
+            temperature=0.2
         )
         response = st.write_stream(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})

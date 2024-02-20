@@ -141,6 +141,7 @@ elif prompt:
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.exams
             ],
+            temperature=0.2,
             stream=True
         )
         response = st.write_stream(stream)
