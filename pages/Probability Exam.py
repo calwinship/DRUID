@@ -1,6 +1,6 @@
 import streamlit as st 
 from openai import OpenAI
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import datetime
 
 st.title('Probability Exam')
@@ -8,7 +8,7 @@ st.title('Probability Exam')
 name = 'Callum'
 interests = ['football', 'cars', 'planes']
 
-load_dotenv()
+# load_dotenv()
 
 client = OpenAI()
 
