@@ -21,15 +21,14 @@ name = 'Aidan'
 current_date = datetime.datetime.now().date()
 target_date = datetime.date(2024, 6, 12)
 if current_date > target_date:
-    llm_model = "gpt-3.5-turbo"
+    llm_model = "gpt-4"
 else:
     llm_model = "gpt-3.5-turbo-0301"
 
 if "api_key" not in st.session_state:
     st.session_state["api_key"] = 0
 
-if st.session_state["api_key"] == 0:
-    st.text('Insert your API KEY in the home menu before starting')
+
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = llm_model
@@ -55,7 +54,7 @@ if "messages" not in st.session_state:
         You should encourage the student to look for examples and to really think about practical applications. Summarise the lesson when all objectives are complete. 
         '''
     }, 
-        {"role": "assistant", "content": f"Hi {name}! To get started, tell me what you think the fundamental principle of counting is: "}
+        {"role": "assistant", "content": f"To get started, tell me what you think the fundamental principle of counting is "}
     ]
 
 # Display chat messages from history on app rerun
@@ -87,6 +86,9 @@ if prompt:
         response = st.write_stream(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})
 
+
+if st.session_state["api_key"] == 0:
+    st.error('Insert your API KEY in the home menu before starting')
 
 if len(st.session_state.messages) >= 3:
     if st.button('Clear chat history'):

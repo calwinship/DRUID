@@ -18,7 +18,7 @@ target_date = datetime.date(2024, 6, 12)
 
 # Set the model variable based on the current date
 if current_date > target_date:
-    llm_model = "gpt-3.5-turbo"
+    llm_model = "gpt-4"
 else:
     llm_model = "gpt-3.5-turbo-0301"
 
@@ -148,3 +148,5 @@ elif prompt:
     st.session_state.exams.append({"role": "assistant", "content": response})
 
 
+if st.session_state["api_key"] == 0:
+    st.error('Insert your API KEY in the home menu before starting')

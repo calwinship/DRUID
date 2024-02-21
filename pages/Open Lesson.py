@@ -15,15 +15,12 @@ name = 'Aidan'
 current_date = datetime.datetime.now().date()
 target_date = datetime.date(2024, 6, 12)
 if current_date > target_date:
-    llm_model = "gpt-3.5-turbo"
+    llm_model = "gpt-4"
 else:
     llm_model = "gpt-3.5-turbo-0301"
 
 if "api_key" not in st.session_state:
     st.session_state["api_key"] = 0
-
-if st.session_state["api_key"] == 0:
-    st.text('Insert your API KEY in the home menu before starting')
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = llm_model
@@ -74,6 +71,8 @@ if prompt:
     st.session_state.omessages.append({"role": "assistant", "content": response})
 
 
+if st.session_state["api_key"] == 0:
+    st.error('Insert your API KEY in the home menu before starting')
 
 if len(st.session_state.omessages) >= 3:
     if st.button('Clear chat history'):
