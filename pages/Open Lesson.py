@@ -32,8 +32,8 @@ client_a = OpenAI(api_key=st.session_state["api_key"])
 
 
 # Initialize chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = [{
+if "omessages" not in st.session_state:
+    st.session_state.omessages = [{
         'role': 'system',
         'content': f'''
         You are a high school math teacher, and today you are teaching {name} whatever he wants. Be creative and engaging. You must use accessible language and your messages should be short. Rather than provide answers, you should ask questions to test {name}'s understanding. Make sure to know if the student's answer is correct or not, even if the student gives it in a different format. 
@@ -44,7 +44,7 @@ if "messages" not in st.session_state:
     ]
 
 # Display chat messages from history on app rerun
-for message in st.session_state.messages:
+for message in st.session_state.omessages:
     if message["role"] != 'system':
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
@@ -57,20 +57,20 @@ if prompt:
     # Display user message in chat message container
     st.chat_message("user").markdown(prompt)
     # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": prompt})
+    st.session_state.omessages.append({"role": "user", "content": prompt})
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         stream = client_a.chat.completions.create(
             model=st.session_state["openai_model"],
             messages=[
                 {"role": m["role"], "content": m["content"]}
-                for m in st.session_state.messages
+                for m in st.session_state.omessages
             ],
             stream=True, 
             temperature=0.2
         )
         response = st.write_stream(stream)
-    st.session_state.messages.append({"role": "assistant", "content": response})
+    st.session_state.omessages.append({"role": "assistant", "content": response})
 
 
 
