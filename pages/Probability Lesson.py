@@ -65,7 +65,7 @@ for message in st.session_state.messages:
             st.markdown(message["content"])
 
 # React to user input          
-prompt = st.chat_input(" ")  
+prompt = st.chat_input("Type here")  
 
 if prompt:
     
@@ -88,7 +88,17 @@ if prompt:
     st.session_state.messages.append({"role": "assistant", "content": response})
 
 
-
+if len(st.session_state.messages) >= 3:
+    if st.button('Clear chat history'):
+        st.session_state.messages = [{
+            'role': 'system',
+            'content': f'''
+            You are a high school math teacher, and today you are teaching {name} whatever he wants. Be creative and engaging. You must use accessible language and your messages should be short. Rather than provide answers, you should ask questions to test {name}'s understanding. Make sure to know if the student's answer is correct or not, even if the student gives it in a different format. 
+            You should encourage the student to look for examples and to really think about practical applications. Summarise the lesson when complete. 
+            '''
+        }, 
+            {"role": "assistant", "content": f"Hi {name}! What would you like to know more about: "}
+        ]
 
 
 
