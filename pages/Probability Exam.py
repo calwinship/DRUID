@@ -10,7 +10,7 @@ interests = ['football', 'cars', 'planes']
 
 # load_dotenv()
 
-client = OpenAI()
+client_b = OpenAI(api_key=st.session_state["api_key"])
 
 current_date = datetime.datetime.now().date()
 # Define the date after which the model should be set to "gpt-3.5-turbo"
@@ -135,7 +135,7 @@ elif prompt:
     # Display assistant response in chat message container
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
-        stream = client.chat.completions.create(
+        stream = client_b.chat.completions.create(
             model=st.session_state["openai_model"],
             messages=[
                 {"role": m["role"], "content": m["content"]}

@@ -28,7 +28,7 @@ if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = llm_model
 
 # client = ChatOpenAI(temperature=0.0, model=st.session_state["openai_model"], openai_api_key=st.session_state["api_key"])
-client = OpenAI(api_key=st.session_state["api_key"])
+client_a = OpenAI(api_key=st.session_state["api_key"])
 
 
 # Initialize chat history
@@ -60,7 +60,7 @@ if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
-        stream = client.chat.completions.create(
+        stream = client_a.chat.completions.create(
             model=st.session_state["openai_model"],
             messages=[
                 {"role": m["role"], "content": m["content"]}
