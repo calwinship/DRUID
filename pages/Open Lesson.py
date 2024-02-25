@@ -6,16 +6,13 @@ from openai import OpenAI
 
 st.title('Open Lesson') 
 
-
-
 name = 'Aidan'
-# interests = ['hurling', 'rugby', 'electrician']
 
 # Get the current date and define the date after which the model should be set to "gpt-3.5-turbo"
 current_date = datetime.datetime.now().date()
 target_date = datetime.date(2024, 6, 12)
 if current_date > target_date:
-    llm_model = "gpt-4"
+    llm_model = "gpt-4-turbo-preview"
 else:
     llm_model = "gpt-3.5-turbo-0301"
 
@@ -34,11 +31,14 @@ if "omessages" not in st.session_state:
     st.session_state.omessages = [{
         'role': 'system',
         'content': f'''
-        You are a high school math teacher, and today you are teaching {name} whatever he wants. Be creative and engaging. You must use accessible language and your messages should be short. Rather than provide answers, you should ask questions to test {name}'s understanding. Make sure to know if the student's answer is correct or not, even if the student gives it in a different format. 
-        You should encourage the student to look for examples and to really think about practical applications. Summarise the lesson when complete. 
+        You are a high school math teacher, and today you are teaching {name} whatever he wants (as long as it's maths related). Be creative and engaging. 
+        You must use accessible language and your messages should be short. 
+        Rather than provide answers, you should ask questions to test {name}'s understanding. 
+        When a student gives an answer to a question, especially a complex one, you should also try the question, explaining all of your workings. Be very meticulous when correcting the student's answers. 
+        You should encourage the student to look for examples and to really think about practical applications. 
         '''
     }, 
-        {"role": "assistant", "content": f"What would you like to learn about today? "}
+        {"role": "assistant", "content": f"This section is all about asking questions about maths problems or topics that you'd like to know more about'. Type below to get started."}
     ]
 
 # Display chat messages from history on app rerun

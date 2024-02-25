@@ -11,7 +11,7 @@ st.write(''' \n\n\n\n\n
             
             )
 
-openai_api_key = st.text_input('Enter your OpenAI API key to get started', key="chatbot_api_key", type="password")
+openai_api_key = st.text_input('Enter your key to get started', key="chatbot_api_key", type="password")
 
   
 

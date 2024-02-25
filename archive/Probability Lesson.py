@@ -21,7 +21,7 @@ name = 'Aidan'
 current_date = datetime.datetime.now().date()
 target_date = datetime.date(2024, 6, 12)
 if current_date > target_date:
-    llm_model = "gpt-4"
+    llm_model = "gpt-4-turbo-preview"
 else:
     llm_model = "gpt-3.5-turbo-0301"
 

@@ -1,26 +1,13 @@
 import streamlit as st 
 from openai import OpenAI
-# from dotenv import load_dotenv
-import datetime
 
-st.title('Probability Exam')
+name = 'Aidan'
 
-name = 'Callum'
-interests = ['football', 'cars', 'planes']
-
-# load_dotenv()
+tags = {"probability", "expected_value"}
 
 client_b = OpenAI(api_key=st.session_state["api_key"])
 
-current_date = datetime.datetime.now().date()
-# Define the date after which the model should be set to "gpt-3.5-turbo"
-target_date = datetime.date(2024, 6, 12)
-
-# Set the model variable based on the current date
-if current_date > target_date:
-    llm_model = "gpt-4"
-else:
-    llm_model = "gpt-3.5-turbo-0301"
+llm_model = "gpt-4-turbo-preview"
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = llm_model
