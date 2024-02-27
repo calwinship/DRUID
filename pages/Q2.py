@@ -3,7 +3,10 @@ from openai import OpenAI
 
 name = 'Aidan'
 
-client_b = OpenAI(api_key=st.session_state["api_key"])
+try:
+    client_b = OpenAI(api_key=st.session_state["api_key"])
+except KeyError:
+    print("Enter the key in the home menu")
 
 # llm_model = "gpt-3.5-turbo"
 llm_model = "gpt-4-turbo-preview"
@@ -13,7 +16,34 @@ if "openai_model" not in st.session_state:
 
 st.image('Exam21_2_Q8c.JPG')
 
-tags = {"probability", "bernoulli_trials"}
+tags = {"Probability", "bernoulli_trials"}
+
+tags = {
+    "The Fundamental Principle of Counting": ["L1"],
+    "Factorials": None,
+    "A Surprising Result - The Number of Ways of Arranging n Distinct Objects, r at a Time": None,
+    "Choosing (Combinations)": None,
+    "The Twin Rule": None,
+    "Probability": None,
+    "Relative Frequency (Experimental Probability)": None,
+    "Probability When All Outcomes are Equally Likely": None,
+    "Probability Theory": None,
+    "Mutually Exclusive Events and Non-Mutually Exclusive Events": None,
+    "Conditional Probability": None,
+    "Probability II": None,
+    "Events that Happen One after Another": None,
+    "Independent Events": None,
+    "Three Laws of Probability": None,
+    "Tree Diagrams": None,
+    "Mixing it Around": None,
+    "Expected Value": None,
+    "The Binomial Distribution: Bernoulli Trials": None,
+    "The Binomial Distribution Extended": None,
+    "The Normal Distribution": None,
+    "The Normal Distribution Table": None,
+    "Solving Problems Involving the Normal Distribution": None
+}
+
 
 
 exam = {
@@ -53,7 +83,7 @@ Do not reveal the answers straight away; instead, foster an environment where {n
 If an error is made, encourage {name} to analyze and understand the mistake before moving forward. Compliment progress and effort to maintain a positive learning atmosphere. Your feedback should be tailored to {name}'s current level of understanding, gradually increasing in specificity based on their needs. 
 Upon completing all questions, ask {name} to reflect on the learning experience and the strategies that led to a solution. This reflective practice reinforces learning and builds problem-solving skills. 
 Remember, the goal is not just to reach the correct answers, but to cultivate a deep understanding and appreciation for the problem-solving process. Answers and solutions are provided for your reference as {solution_1} and {solution_2}, but use them judiciously to verify correctness and provide guidance when absolutely necessary. 
-All equations and mathematical expressions should be enclosed within two dollar signs ($$) to ensure clarity.
+All equations and mathematical expressions should be enclosed within two dollar signs ($$) to ensure clarity, for example $\frac...$. 
 Lastly, your feedback should always be constructive, aiming to build confidence and encourage continuous improvement. 
 '''
 }, 
