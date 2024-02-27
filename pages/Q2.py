@@ -6,7 +6,7 @@ name = 'Aidan'
 try:
     client_b = OpenAI(api_key=st.session_state["api_key"])
 except KeyError:
-    print("Enter the key in the home menu")
+    st.markdown("Enter the key in the home menu")
 
 # llm_model = "gpt-3.5-turbo"
 llm_model = "gpt-4-turbo-preview"
