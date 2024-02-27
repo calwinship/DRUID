@@ -87,7 +87,7 @@ if "exam2" not in st.session_state:
         {question_1}, then {question_2}, then {question_3}, then {question_4}, then {question_5}. Don't give the student the answer and solution straight away. Instead encourage {name} to find the answer on their own. Take it one part of the question at a time and then summarise once all are complete. The answers are {solution_1}, then {solution_2}, then {solution_3}, then {solution_4}, then {solution_5} Be very careful when checking the student's answers.
         Any answers you give with equations should be enclosed by two dollar signs like so $\binom..$
         '''}, 
-        {"role": "assistant", "content": f"Try Q1(a) and let me know what you get."}
+        {"role": "assistant", "content": f"Try the question first and let me know what you get."}
     ]
 
 # Display chat messages from history on app rerun

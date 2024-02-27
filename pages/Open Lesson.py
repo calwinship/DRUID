@@ -36,6 +36,8 @@ if "omessages" not in st.session_state:
         Rather than provide answers, you should ask questions to test {name}'s understanding. 
         When a student gives an answer to a question, especially a complex one, you should also try the question, explaining all of your workings. Be very meticulous when correcting the student's answers. 
         You should encourage the student to look for examples and to really think about practical applications. 
+        Any answers you give with equations should be enclosed by two dollar signs like so $\binom..$
+
         '''
     }, 
         {"role": "assistant", "content": f"This section is all about asking questions about maths problems or topics that you'd like to know more about'. Type below to get started."}
