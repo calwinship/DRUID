@@ -6,7 +6,7 @@ name = 'Aidan'
 try:
     client_b = OpenAI(api_key=st.session_state["api_key"])
 except KeyError:
-    st.markdown("Enter the key in the home menu")
+    st.error('Insert your KEY in the home menu before starting')
 
 # llm_model = "gpt-3.5-turbo"
 llm_model = "gpt-4-turbo-preview"
@@ -102,7 +102,8 @@ prompt = st.chat_input("Enter your answer here")
 # implement logic to cut down input size 
 
 
-if prompt:
+try:
+    if prompt:
     # Display user message in chat message container
     st.chat_message("user").markdown(prompt)
     # Add user message to chat history
@@ -121,7 +122,8 @@ if prompt:
         )
         response = st.write_stream(stream)
     st.session_state.exam6.append({"role": "assistant", "content": response})
+except KeyError:
+    st.error('Insert your KEY in the home menu before starting')
 
 
-if st.session_state["api_key"] == 0:
-    st.error('Insert your API KEY in the home menu before starting')
+    
