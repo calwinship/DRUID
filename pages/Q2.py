@@ -104,24 +104,24 @@ prompt = st.chat_input("Enter your answer here")
 
 try:
     if prompt:
-    # Display user message in chat message container
-    st.chat_message("user").markdown(prompt)
-    # Add user message to chat history
-    st.session_state.exam6.append({"role": "user", "content": prompt})
+        # Display user message in chat message container
+        st.chat_message("user").markdown(prompt)
+        # Add user message to chat history
+        st.session_state.exam6.append({"role": "user", "content": prompt})
 
-    # Display assistant response in chat message container
-    with st.chat_message("assistant"):
-        stream = client_b.chat.completions.create(
-            model=st.session_state["openai_model"],
-            messages=[
-                {"role": m["role"], "content": m["content"]}
-                for m in st.session_state.exam6
-            ],
-            temperature=0.2,
-            stream=True
-        )
-        response = st.write_stream(stream)
-    st.session_state.exam6.append({"role": "assistant", "content": response})
+        # Display assistant response in chat message container
+        with st.chat_message("assistant"):
+            stream = client_b.chat.completions.create(
+                model=st.session_state["openai_model"],
+                messages=[
+                    {"role": m["role"], "content": m["content"]}
+                    for m in st.session_state.exam6
+                ],
+                temperature=0.2,
+                stream=True
+            )
+            response = st.write_stream(stream)
+        st.session_state.exam6.append({"role": "assistant", "content": response})
 except KeyError:
     st.error('Insert your KEY in the home menu before starting')
 
