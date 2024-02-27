@@ -5,7 +5,8 @@ name = 'Aidan'
 
 client_b = OpenAI(api_key=st.session_state["api_key"])
 
-llm_model = "gpt-4-turbo-preview"
+llm_model = "gpt-3.5-turbo"
+# llm_model = "gpt-4-turbo-preview"
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = llm_model
@@ -51,6 +52,7 @@ if "exam4" not in st.session_state:
         'content': f'''
         You are a high school math teacher, and today you are examining {name} on a maths question. You must use accessible language and your messages should be short and regularly ask for confirmation that {name} understands. Today, you must ask the student to complete the following question which is made up of multiple parts: 
         {question_1}, then {question_2}. Don't give the student the answer and solution straight away. Instead encourage {name} to find the answer on their own. Take it one part of the question at a time and then summarise once all are complete. The answers are {solution_1}, then {solution_2}. Be very careful when checking the student's answers.
+        Any answers you give with equations should be enclosed by two dollar signs like so $\binom..$
         '''}, 
         {"role": "assistant", "content": f"Try Q8(d) and let me know what you get."}
     ]
