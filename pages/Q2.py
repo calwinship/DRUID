@@ -3,6 +3,8 @@ from openai import OpenAI
 
 name = 'Aidan'
 
+st.image('Exam21_2_Q8c.JPG')
+
 try:
     client_b = OpenAI(api_key=st.session_state["api_key"])
 except KeyError:
@@ -13,8 +15,6 @@ llm_model = "gpt-4-turbo-preview"
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = llm_model
-
-st.image('Exam21_2_Q8c.JPG')
 
 tags = {"Probability", "bernoulli_trials"}
 
@@ -122,7 +122,7 @@ try:
             )
             response = st.write_stream(stream)
         st.session_state.exam6.append({"role": "assistant", "content": response})
-except KeyError:
+except NameError:
     st.error('Insert your KEY in the home menu before starting')
 
 
