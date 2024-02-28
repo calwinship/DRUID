@@ -18,34 +18,6 @@ if "openai_model" not in st.session_state:
 
 tags = {"Probability", "bernoulli_trials"}
 
-tags = {
-    "The Fundamental Principle of Counting": ["L1"],
-    "Factorials": None,
-    "A Surprising Result - The Number of Ways of Arranging n Distinct Objects, r at a Time": None,
-    "Choosing (Combinations)": None,
-    "The Twin Rule": None,
-    "Probability": None,
-    "Relative Frequency (Experimental Probability)": None,
-    "Probability When All Outcomes are Equally Likely": None,
-    "Probability Theory": None,
-    "Mutually Exclusive Events and Non-Mutually Exclusive Events": None,
-    "Conditional Probability": None,
-    "Probability II": None,
-    "Events that Happen One after Another": None,
-    "Independent Events": None,
-    "Three Laws of Probability": None,
-    "Tree Diagrams": None,
-    "Mixing it Around": None,
-    "Expected Value": None,
-    "The Binomial Distribution: Bernoulli Trials": None,
-    "The Binomial Distribution Extended": None,
-    "The Normal Distribution": None,
-    "The Normal Distribution Table": None,
-    "Solving Problems Involving the Normal Distribution": None
-}
-
-
-
 exam = {
     "questions": { 
                 "ci": {"The school caretaker has a box with 23 room keys in it. 12 of the keys are for general classrooms, 6 for science labs and 5 for offices. Four keys are drawn at random from the box. What is the probability that the 4th key drawn is the first office key drawn? Give your answer correct to 4 decimal places."

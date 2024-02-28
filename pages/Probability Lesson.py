@@ -7,100 +7,130 @@ from openai import OpenAI
 st.title('Probability Lesson') 
 
 
-st.markdown('''Topics in this lesson include:
-- The fundamental principle of counting 
-- Factorials
-- Combinations
-- Permutations
-''')
+all_tags = {
+    "The Fundamental Principle of Counting": ["L1"],
+    "Factorials": None,
+    "A Surprising Result - The Number of Ways of Arranging n Distinct Objects, r at a Time": None,
+    "Choosing (Combinations)": None,
+    "The Twin Rule": None,
+    "Probability": None,
+    "Relative Frequency (Experimental Probability)": None,
+    "Probability When All Outcomes are Equally Likely": None,
+    "Probability Theory": None,
+    "Mutually Exclusive Events and Non-Mutually Exclusive Events": None,
+    "Conditional Probability": None,
+    "Probability II": None,
+    "Events that Happen One after Another": None,
+    "Independent Events": None,
+    "Three Laws of Probability": None,
+    "Tree Diagrams": None,
+    "Mixing it Around": None,
+    "Expected Value": None,
+    "The Binomial Distribution: Bernoulli Trials": None,
+    "The Binomial Distribution Extended": None,
+    "The Normal Distribution": None,
+    "The Normal Distribution Table": None,
+    "Solving Problems Involving the Normal Distribution": None
+}
+
+
+st.selectbox('Topic', all)
 
 name = 'Aidan'
-# interests = ['hurling', 'rugby', 'electrician']
 
-# Get the current date and define the date after which the model should be set to "gpt-3.5-turbo"
-current_date = datetime.datetime.now().date()
-target_date = datetime.date(2024, 6, 12)
-if current_date > target_date:
-    llm_model = "gpt-4-turbo-preview"
-else:
-    llm_model = "gpt-3.5-turbo-0301"
+try:
+    client_b = OpenAI(api_key=st.session_state["api_key"])
+except KeyError:
+    st.error('Insert your KEY in the home menu before starting')
 
-if "api_key" not in st.session_state:
-    st.session_state["api_key"] = 0
-
-
+# llm_model = "gpt-3.5-turbo"
+llm_model = "gpt-4-turbo-preview"
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = llm_model
 
-# client = ChatOpenAI(temperature=0.0, model=st.session_state["openai_model"], openai_api_key=st.session_state["api_key"])
-client = OpenAI(api_key=st.session_state["api_key"])
+tags = {"Probability", "bernoulli_trials"}
 
-# N.B. for later - The returned container can contain any Streamlit element, including charts, tables, text, and more. To add elements to the returned container, you can use with notation.
-#
-# memory = ConversationBufferWindowMemory(k=3)
+
+
+exam = {
+    "questions": { 
+                "ci": {"The school caretaker has a box with 23 room keys in it. 12 of the keys are for general classrooms, 6 for science labs and 5 for offices. Four keys are drawn at random from the box. What is the probability that the 4th key drawn is the first office key drawn? Give your answer correct to 4 decimal places."
+                },
+                "cii": {
+                    "question": "All the keys are returned to the box. Then 3 keys are drawn at random from the box one after the other, without replacement. What is the probability that one of them is for a general classroom, one is for a science lab and one is for an office? Give your answer correct to 4 decimal places."
+                }
+            },
+    "solutions": {
+        "ci": {
+            "solution": "Assuming no replacement: (18/23) * (17/22) * (16/21) * (5/20) = 0.11518... = 0.1152 OR Assuming replacement: (18/23)^3 * (5/23) = 0.10420... = 0.1042"
+        },
+        "cii": {
+            "solution": "((12/23) * (6/22) * (5/21)) * 3! = 0.20327... = 0.2033"
+        }
+    }
+}
+
+question_1 = exam['questions']["ci"]
+question_2 = exam['questions']["cii"]
+
+solution_1 = exam['solutions']["ci"] 
+solution_2 = exam['solutions']["cii"] 
+
 
 # Initialize chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = [{
+if "exam6" not in st.session_state:
+    st.session_state.exam6 = [{
         'role': 'system',
-        'content': f'''
-        You are a high school math teacher, and today you are teaching Probability to {name}. Be creative and engaging - don't just spill out answers - you're a teacher and mentor. You must use accessible language and your messages should be short. Rather than provide answers, you should ask questions to test {name}'s understanding. Make sure to know if the student's answer is correct or not, even if the student gives it in a different format. Today, you must provide a lesson with the following objectives: 
-        - understand the fundamental principle of counting, from a theoretical and practical standpoint. this should be tested with an example of the fundamental principle of counting with restaurant menu choices, number of ways of arranging the letters of the student’s name, and another practical and useful example. Point out to the student that the name might be a bit confusing because it isn't the traditional way of counting by adding. 
-        - this should naturally lead onto factorials. get the student to use their calculator to do perform 2 calculations that require factorials. then ask them what they think 0 factorial is, and explain the answer once they provide theirs. 
-        - understand choosing (combinations) - explain the topic in depth and create examples for them to answer. 
-        - understand permutations - explain the topic in depth and create examples for them to answer. 
-        - test understanding of when to use which method with several examples.
-        You should encourage the student to look for examples and to really think about practical applications. Summarise the lesson when all objectives are complete. 
-        '''
-    }, 
-        {"role": "assistant", "content": f"To get started, tell me what you think the fundamental principle of counting is "}
+'content': f'''
+You are a high school math teacher, and today you are working with {name} on a maths lesson. Use accessible language. Your role is to guide, not to provide direct answers. 
+Today's task involves completing: {question_1}, followed by {question_2}.
+If {name} doesn't get an answer correct or asks for help, encourage them to share their thoughts on approaching the problem before diving into the specifics. guide them with hints if they are stuck or request assistance.
+Do not reveal the answers straight away; instead, foster an environment where {name} is motivated to find the solutions independently. After each attempt, whether correct or incorrect, engage in a constructive discussion to understand {name}'s thought process. This approach will help identify misconceptions and areas for improvement. 
+If an error is made, encourage {name} to analyze and understand the mistake before moving forward. Compliment progress and effort to maintain a positive learning atmosphere. Your feedback should be tailored to {name}'s current level of understanding, gradually increasing in specificity based on their needs. 
+Upon completing all questions, ask {name} to reflect on the learning experience and the strategies that led to a solution. This reflective practice reinforces learning and builds problem-solving skills. 
+Remember, the goal is not just to reach the correct answers, but to cultivate a deep understanding and appreciation for the problem-solving process. Answers and solutions are provided for your reference as {solution_1} and {solution_2}, but use them judiciously to verify correctness and provide guidance when absolutely necessary. 
+All equations and mathematical expressions should be enclosed within two dollar signs ($$) to ensure clarity, for example $\frac...$. 
+Lastly, your feedback should always be constructive, aiming to build confidence and encourage continuous improvement. 
+'''
+}, 
+        {"role": "assistant", "content": f"Try the question first and let me know what you get."}
     ]
 
 # Display chat messages from history on app rerun
-for message in st.session_state.messages:
+for message in st.session_state.exam6:
     if message["role"] != 'system':
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-# React to user input          
-prompt = st.chat_input("Type here")  
+# React to user input
+prompt = st.chat_input("Enter your answer here")  
 
-if prompt:
+# implement logic to cut down input size 
+
+
+try:
+    if prompt:
+        # Display user message in chat message container
+        st.chat_message("user").markdown(prompt)
+        # Add user message to chat history
+        st.session_state.exam6.append({"role": "user", "content": prompt})
+
+        # Display assistant response in chat message container
+        with st.chat_message("assistant"):
+            stream = client_b.chat.completions.create(
+                model=st.session_state["openai_model"],
+                messages=[
+                    {"role": m["role"], "content": m["content"]}
+                    for m in st.session_state.exam6
+                ],
+                temperature=0.2,
+                stream=True
+            )
+            response = st.write_stream(stream)
+        st.session_state.exam6.append({"role": "assistant", "content": response})
+except NameError:
+    st.error('Insert your KEY in the home menu before starting')
+
+
     
-    # Display user message in chat message container
-    st.chat_message("user").markdown(prompt)
-    # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    # Display assistant response in chat message container
-    with st.chat_message("assistant"):
-        stream = client.chat.completions.create(
-            model=st.session_state["openai_model"],
-            messages=[
-                {"role": m["role"], "content": m["content"]}
-                for m in st.session_state.messages
-            ],
-            temperature=0.2,
-            stream=True
-        )
-        response = st.write_stream(stream)
-    st.session_state.messages.append({"role": "assistant", "content": response})
-
-
-if st.session_state["api_key"] == 0:
-    st.error('Insert your API KEY in the home menu before starting')
-
-if len(st.session_state.messages) >= 3:
-    if st.button('Clear chat history'):
-        st.session_state.messages = [{
-            'role': 'system',
-            'content': f'''
-            You are a high school math teacher, and today you are teaching {name} whatever he wants. Be creative and engaging. You must use accessible language and your messages should be short. Rather than provide answers, you should ask questions to test {name}'s understanding. Make sure to know if the student's answer is correct or not, even if the student gives it in a different format. 
-            You should encourage the student to look for examples and to really think about practical applications. Summarise the lesson when complete. 
-            '''
-        }, 
-            {"role": "assistant", "content": f"Hi {name}! What would you like to know more about: "}
-        ]
-
-
-

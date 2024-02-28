@@ -7,8 +7,8 @@ name = 'Aidan'
 
 client_b = OpenAI(api_key=st.session_state["api_key"])
 
-llm_model = "gpt-3.5-turbo"
-# llm_model = "gpt-4-turbo-preview"
+# llm_model = "gpt-3.5-turbo"
+llm_model = "gpt-4-turbo-preview"
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = llm_model
