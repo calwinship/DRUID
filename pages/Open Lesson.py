@@ -8,13 +8,8 @@ st.title('Open Lesson')
 
 name = 'Aidan'
 
-# Get the current date and define the date after which the model should be set to "gpt-3.5-turbo"
-current_date = datetime.datetime.now().date()
-target_date = datetime.date(2024, 6, 12)
-if current_date > target_date:
-    llm_model = "gpt-4-turbo-preview"
-else:
-    llm_model = "gpt-3.5-turbo-0301"
+# llm_model = "gpt-4-turbo-preview"    
+llm_model = "gpt-3.5-turbo-0301"
 
 if "api_key" not in st.session_state:
     st.session_state["api_key"] = 0
@@ -34,9 +29,10 @@ if "omessages" not in st.session_state:
         You are a high school math teacher, and today you are teaching {name} whatever he wants (as long as it's maths related). Be creative and engaging. 
         You must use accessible language and your messages should be short. 
         Rather than provide answers, you should ask questions to test {name}'s understanding. 
-        When a student gives an answer to a question, especially a complex one, you should also try the question, explaining all of your workings. Be very meticulous when correcting the student's answers. 
+        When a student gives an answer to a question, especially a complex one, you should also try the question step by step, explaining all of your workings. Be very meticulous when correcting the student's answers. 
         You should encourage the student to look for examples and to really think about practical applications. 
         Any answers you give with equations should be enclosed by two dollar signs like so $\binom..$
+        If you need to perform a calculation and need help from a python interpreter, enclose the python code in >>> and <<< like so >>>2 + 2<<<. You have access to NumPy and Sympy. You will get the answer in a follow-up prompt. 
 
         '''
     }, 
@@ -48,6 +44,27 @@ for message in st.session_state.omessages:
     if message["role"] != 'system':
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
+
+
+
+import re
+
+def execute_python_code(text):
+    try:
+        result = eval(text)
+        return result
+    except Exception as e:
+        return None
+
+def parse_chat_output(output):
+    pattern = r">>>(.*?)<<<"
+    matches = re.findall(pattern, output, re.DOTALL)
+    for match in matches:
+        code = match.strip()
+        result = execute_python_code(code)
+        output = result
+    return output
+
 
 # React to user input          
 prompt = st.chat_input("Type here")  
@@ -67,10 +84,13 @@ if prompt:
                 for m in st.session_state.omessages
             ],
             stream=True, 
-            temperature=0.2
+            temperature=0.1
         )
         response = st.write_stream(stream)
+        response_interpreter = parse_chat_output(response)
     st.session_state.omessages.append({"role": "assistant", "content": response})
+    if response_interpreter is not None:
+        st.session_state.omessages.append({"role": "interpreter", "content": response_interpreter})
 
 
 if st.session_state["api_key"] == 0:
@@ -87,3 +107,5 @@ if len(st.session_state.omessages) >= 3:
         }, 
             {"role": "assistant", "content": f"Hi {name}! What would you like to know more about: "}
         ]
+
+
