@@ -5,14 +5,13 @@ from openai import OpenAI
 
 name = 'Aidan'
 
-
-# llm_model = "gpt-3.5-turbo"
-llm_model = "gpt-4-turbo-preview"
-
 try:
     client_b = OpenAI(api_key=st.session_state["api_key"])
 except KeyError:
     st.error('Insert your KEY in the home menu before starting')
+
+# llm_model = "gpt-3.5-turbo"
+llm_model = "gpt-4-turbo-preview"
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = llm_model
@@ -78,29 +77,27 @@ for message in st.session_state.exam5:
 # React to user input
 prompt = st.chat_input("Enter your answer here")  
 
-# implement logic to cut down input size 
+# implement logic to cut down input size
 
+try:
+    if prompt:
+        # Display user message in chat message container
+        st.chat_message("user").markdown(prompt)
+        # Add user message to chat history
+        st.session_state.exam5.append({"role": "user", "content": prompt})
 
-if prompt:
-    # Display user message in chat message container
-    st.chat_message("user").markdown(prompt)
-    # Add user message to chat history
-    st.session_state.exam5.append({"role": "user", "content": prompt})
-
-    # Display assistant response in chat message container
-    with st.chat_message("assistant"):
-        stream = client_b.chat.completions.create(
-            model=st.session_state["openai_model"],
-            messages=[
-                {"role": m["role"], "content": m["content"]}
-                for m in st.session_state.exam5
-            ],
-            temperature=0.2,
-            stream=True
-        )
-        response = st.write_stream(stream)
-    st.session_state.exam5.append({"role": "assistant", "content": response})
-
-
-if st.session_state["api_key"] == 0:
-    st.error('Insert your API KEY in the home menu before starting')
+        # Display assistant response in chat message container
+        with st.chat_message("assistant"):
+            stream = client_b.chat.completions.create(
+                model=st.session_state["openai_model"],
+                messages=[
+                    {"role": m["role"], "content": m["content"]}
+                    for m in st.session_state.exam5
+                ],
+                temperature=0.2,
+                stream=True
+            )
+            response = st.write_stream(stream)
+        st.session_state.exam5.append({"role": "assistant", "content": response})
+except NameError:
+    st.error('Insert your KEY in the home menu before starting')

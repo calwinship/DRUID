@@ -73,8 +73,8 @@ solution_5 = exam['solutions']["d"]
 
 
 # Initialize chat history
-if "exam6" not in st.session_state:
-    st.session_state.exam6 = [{
+if "exam8" not in st.session_state:
+    st.session_state.exam8 = [{
         'role': 'system',
 'content': f'''
 You are a high school math teacher, and today you are working with {name} on a maths question. Use accessible language. Your role is to guide, not to provide direct answers. 
@@ -92,7 +92,7 @@ If you need to perform a calculation and need help from a python interpreter, en
     ]
 
 # Display chat messages from history on app rerun
-for message in st.session_state.exam6:
+for message in st.session_state.exam8:
     if message["role"] != 'system':
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
@@ -108,7 +108,7 @@ try:
         # Display user message in chat message container
         st.chat_message("user").markdown(prompt)
         # Add user message to chat history
-        st.session_state.exam6.append({"role": "user", "content": prompt})
+        st.session_state.exam8.append({"role": "user", "content": prompt})
 
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
@@ -116,13 +116,13 @@ try:
                 model=st.session_state["openai_model"],
                 messages=[
                     {"role": m["role"], "content": m["content"]}
-                    for m in st.session_state.exam6
+                    for m in st.session_state.exam8
                 ],
                 temperature=0.2,
                 stream=True
             )
             response = st.write_stream(stream)
-        st.session_state.exam6.append({"role": "assistant", "content": response})
+        st.session_state.exam8.append({"role": "assistant", "content": response})
 except NameError:
     st.error('Insert your KEY in the home menu before starting')
 
