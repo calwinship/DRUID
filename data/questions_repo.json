@@ -1,0 +1,144 @@
+{
+    "2021": {
+        "2": {
+            "8": {
+                "parts": {
+                    "ci": "The school caretaker has a box with 23 room keys in it. 12 of the keys are for general classrooms, 6 for science labs and 5 for offices. Four keys are drawn at random from the box. What is the probability that the 4th key drawn is the first office key drawn? Give your answer correct to 4 decimal places.",
+                    "cii": "All the keys are returned to the box. Then 3 keys are drawn at random from the box one after the other, without replacement. What is the probability that one of them is for a general classroom, one is for a science lab and one is for an office? Give your answer correct to 4 decimal places."
+                },
+                "solutions": {
+                    "ci": "Assuming no replacement: (18/23) * (17/22) * (16/21) * (5/20) = 0.11518... = 0.1152 OR Assuming replacement: (18/23)^3 * (5/23) = 0.10420... = 0.1042",
+                    "cii": "((12/23) * (6/22) * (5/21)) * 3! = 0.20327... = 0.2033"
+                },
+                "images": [
+                    "images/Exam21_2_Q8c.JPG"
+                ],
+                "labels": [
+                    "Probability",
+                    "bernoulli_trials"
+                ]
+            }
+        }
+    }, 
+    "2022": {
+        "2": {
+            "1": {
+                "parts": {
+                    "ai": {
+                        "question": "(a) The table below gives some details on the number of different types of student in a university. There are 22714 students in the university in total.\n\n{\n    \"table\": {\n        \"Age_Years\": {\n            \"Total\": 22714,\n            \"23_or_younger\": None,\n            \"24_or_older\": 8576\n        },\n        \"Students\": {\n            \"Undergraduate\": {\n                \"23_or_younger\": 12785,\n                \"24_or_older\": 2922,\n                \"Total\": 15707\n            },\n            \"Postgraduate\": {\n                \"23_or_younger\": 1353,\n                \"24_or_older\": None,\n                \"Total\": None\n            }\n        }\n    }\n    \n    question: Fill in the three missing values to complete the table.\n}"
+                    },
+                    "aii": {
+                        "question": "One student is picked at random from the students in the university. Let O be the event that the student is 24 years old, or older. Let U be the event that the student is an undergraduate. Are the events O and U independent? Justify your answer."
+                    },
+                    "b": {
+                        "question": "Three people are picked at random from a class. Find the probability that all three were born on the same day of the week. Assume that the probability of being born on each day is the same."
+                    },
+                    "c": {
+                        "question": "There are b boys and g girls in a class, where b and g are natural numbers. 3/5 of the students in the class are girls. 4 boys and 4 girls join the class. One student is then picked at random from the whole class. The probability that this student is a girl is now 4/7. Find the value of b and the value of g."
+                    }
+                },
+                "solutions": {
+                    "ai": {
+                        "answer": {
+                            "23_or_younger": 14138,
+                            "24_or_older": 8576,
+                            "Total": 22714
+                        }
+                    },
+                    "aii": {
+                        "answer": "They are not independent."
+                    },
+                    "b": {
+                        "answer": "1/49 = 0.0204"
+                    },
+                    "c": {
+                        "answer": "b = 8, g = 12"
+                    }
+                },
+                "images": [
+                    "images/Exam22_2_Q1ai.JPG",
+                    "images/Exam22_2_Q1aii.JPG",
+                    "images/Exam22_2_Q1b.JPG",
+                    "images/Exam22_2_Q1c.JPG"
+                ],
+                "labels": ["probability", "independent_events"]
+            }
+            ,
+            "8": {
+                "parts": {
+                    "ai": {
+                        "question": "Jena is researching fuel consumption in cars. She finds the data (not given to you as an LLM but available to the student) for the number of miles per gallon (m/g) for eight different cars, labelled A to H, when driving in the city and on the motorway. The scatterplot provided to the student shows this data for cars A to F. Using the data in the table, plot and label points to represent cars G and H on the scatterplot."
+                    },
+                    "aii": {
+                        "question": "On the scatterplot, draw the line of best fit for the data, by eye."
+                    },
+                    "aiii": {
+                        "question": "Two other cars, K and L, have the miles per gallon values given in the following table (not given to you as an LLM but available to the student). Use your line of best fit on the scatterplot to fill in an estimate for each of the two missing values in the table below. Show your work on the scatterplot."
+                    },
+                    "aiv": {
+                        "question": "Based on the data given, would you be more confident in the value you estimated for K or for L? Give a reason for your answer."
+                    },
+                    "av": {
+                        "question": "Find the value of r, the correlation coefficient between city and motorway miles per gallon. Use only the values for the 8 cars A to H in the table. Give your answer correct to 3 decimal places."
+                    }
+                },
+                "solutions": {
+                    "ai": {
+                        "answer": "G and H plotted and labelled correctly."
+                    },
+                    "aii": {
+                        "answer": "Reasonable line of best fit drawn."
+                    },
+                    "aiii": {
+                        "answer": "Answers consistent with candidate’s line of best fit - K should be between 25-40, L should be between 35-55."
+                    },
+                    "aiv": {
+                        "answer": "K, Reason: L is well beyond all of the given data points."
+                    },
+                    "av": {
+                        "answer": "0.9659 … = 0.966."
+                    }
+                },
+                "images": [
+                    "images/Exam22_2_Q8ai.JPG",
+                    "images/Exam22_2_Q8aii.JPG"
+                ],
+                "labels": ["scatter_plot", "correlation_coefficient"]
+            }
+            , 
+            "10": {
+                "parts": {
+                    "ai": "In an athletics competition, there were a number of heats of the 1500 m race. In the heats, the times that it took the runners to complete the 1500 m were approximately normally distributed, with a mean time of 225 seconds and a standard deviation of 12 seconds. Find the percentage of runners in these heats who took more than 240 seconds to run the 1500 m.",
+                    "aii": "The 20% of runners with the fastest times qualified for the final. Assuming the race times were normally distributed as described above, work out the time needed to qualify for the final, correct to the nearest second.",
+                    "b": "Sally takes part in a number of different races in the competition. The probability that she makes a false start in any given race is 5%. Find the probability that she makes her first false start in her fourth race. Give your answer correct to 4 decimal places.",
+                    "c": "20 relay teams took part in the competition. For any particular team, the probability that they drop the baton at some point during the competition is 0.1. Find the probability that at most 2 teams drop the baton during the competition. Give your answer correct to 4 decimal places.",
+                    "d": "300 runners take part in a road race. Each runner has a number, from 1 to 300 inclusive. No two runners have the same number. Two runners are picked at random from the runners in this race. Work out the probability that the sum of their numbers is 101. Give your answer as a fraction in its simplest form."
+                },
+                "solutions": {
+                    "ai": "𝑧 = (240-225) / 12 = 15 / 12 = 1.25, 𝑃(𝑥 > 240) = 𝑃(𝑧 > 1.25) = 1 − 𝑃(𝑧 < 1.25) = 1 − 0.8944 = 0.1056. Answer: 10.56%",
+                    "aii": "Look up 𝑃=0.8: 𝑧=0.84 or 0.85. Time=(225 - x)/12 = 0.84. So Time= 225 − 0.84(12) = 214.92. Or Time = 225 − 0.85(12) = 214.8. Accept time = 214 [secs] or 215 [secs].",
+                    "b": "1 − 0.05 = 0.95. 𝑃 = 0.95 × 0.95 × 0.95 × 0.05 = 0.04286 ... = 0.0429 [4 D.P.]",
+                    "c": "𝑃(at most 2) = 𝑃(0 or 1 or 2) = 𝑃(0) + 𝑃(1) + 𝑃(2) = 0.9^20 + 20C1 * 0.1 * 0.9^19 + 20C2 * 0.1^2 * 0.9^18 = 0.12157 ... + 0.27017 ... + 0.28517 ... = 0.67692 ... = 0.6769 [4 D.P.]",
+                    "d": "50 possible pairs of numbers add to 101: 1+100, 2+99, ..., 50+51. 300C2 = 44850 pairs in total. So 𝑃 = 50/44850 = 1/897. OR 100 different 1st numbers could be picked; for each, only one 2nd number will give 101: 𝑃 = (100/300) * (1/299) = 1/897."
+                },
+                "images": ["images/Exam22_2_Q10_A.png", "images/Exam22_2_Q10_B.png", "images/Exam22_2_Q10_C.png", "images/Exam22_2_Q10_D.png"],
+                "labels": ["Probability", "Statistics"]
+            }, 
+            "5": {
+                "parts": {
+                    "b": "In 2019, people with a pre-pay mobile phone plan spent an average (mean) of €20.79 on their mobile phone each month (source: www.comreg.ie). In 2021, some students carried out a survey to see if this figure had changed. They surveyed a random sample of 500 people with pre-pay mobile phone plans. For this sample, the mean amount spent per month was €22.16 and the standard deviation was €8.12. Carry out a hypothesis test at the 5% level of significance to see if this shows a change in the mean monthly spend on mobile phones for people with a pre-pay plan. State your null hypothesis and your alternative hypothesis, state your conclusion, and give a reason for your conclusion."
+                },
+                "solutions": {
+                    "b": "Null Hypothesis: Average [mean] amount has not changed. Alternative Hypothesis: Average [mean] amount has changed. Conclusion: The average amount has changed. Calculations & Reason: 𝑧 = (22.16 - 20.79) / (8.12 / sqrt(500)) = 3.7726 ..., which is greater than 1.96 OR 20.79 ± 1.96 * (8.12 / sqrt(500)) = [20.07.., 21.51..], and 22.16 lies outside this range OR 22.16 ± 1.96 * (8.12 / sqrt(500)) = [21.44.., 22.87...], and 20.79 lies outside this range."
+                },
+                "images": ["images/Exam22_2_Q5_B.png"],
+                "labels": ["Probability", "bernoulli_trials"]
+            }
+        }
+    }
+}
+
+
+
+
+
