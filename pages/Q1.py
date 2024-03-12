@@ -5,10 +5,14 @@ from openai import OpenAI
 
 name = 'Aidan'
 
-client_b = OpenAI(api_key=st.session_state["api_key"])
 
 # llm_model = "gpt-3.5-turbo"
 llm_model = "gpt-4-turbo-preview"
+
+try:
+    client_b = OpenAI(api_key=st.session_state["api_key"])
+except KeyError:
+    st.error('Insert your KEY in the home menu before starting')
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = llm_model
