@@ -3,10 +3,10 @@ from openai import OpenAI
 
 name = 'Aidan'
 
-st.image('Exam22_2_Q10_A.PNG')
-st.image('Exam22_2_Q10_B.PNG')
-st.image('Exam22_2_Q10_C.PNG')
-st.image('Exam22_2_Q10_D.PNG')
+st.image('Exam22_2_Q10_A.png')
+st.image('Exam22_2_Q10_B.png')
+st.image('Exam22_2_Q10_C.png')
+st.image('Exam22_2_Q10_D.png')
 
 try:
     client_b = OpenAI(api_key=st.session_state["api_key"])

@@ -3,7 +3,7 @@ from openai import OpenAI
 
 name = 'Aidan'
 
-st.image('Exam22_2_Q5_B.PNG')
+st.image('Exam22_2_Q5_B.png')
 
 try:
     client_b = OpenAI(api_key=st.session_state["api_key"])
@@ -65,7 +65,6 @@ for message in st.session_state.exam6:
 prompt = st.chat_input("Enter your answer here")  
 
 # implement logic to cut down input size 
-
 
 try:
     if prompt:
