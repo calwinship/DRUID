@@ -62,8 +62,17 @@
                     "images/Exam22_2_Q1c.JPG"
                 ],
                 "labels": ["probability", "independent_events"]
-            }
-            ,
+            }, 
+            "5": {
+                "parts": {
+                    "b": "In 2019, people with a pre-pay mobile phone plan spent an average (mean) of €20.79 on their mobile phone each month (source: www.comreg.ie). In 2021, some students carried out a survey to see if this figure had changed. They surveyed a random sample of 500 people with pre-pay mobile phone plans. For this sample, the mean amount spent per month was €22.16 and the standard deviation was €8.12. Carry out a hypothesis test at the 5% level of significance to see if this shows a change in the mean monthly spend on mobile phones for people with a pre-pay plan. State your null hypothesis and your alternative hypothesis, state your conclusion, and give a reason for your conclusion."
+                },
+                "solutions": {
+                    "b": "Null Hypothesis: Average [mean] amount has not changed. Alternative Hypothesis: Average [mean] amount has changed. Conclusion: The average amount has changed. Calculations & Reason: 𝑧 = (22.16 - 20.79) / (8.12 / sqrt(500)) = 3.7726 ..., which is greater than 1.96 OR 20.79 ± 1.96 * (8.12 / sqrt(500)) = [20.07.., 21.51..], and 22.16 lies outside this range OR 22.16 ± 1.96 * (8.12 / sqrt(500)) = [21.44.., 22.87...], and 20.79 lies outside this range."
+                },
+                "images": ["images/Exam22_2_Q5_B.png"],
+                "labels": ["Probability", "bernoulli_trials"]
+            },
             "8": {
                 "parts": {
                     "ai": {
@@ -123,16 +132,6 @@
                 },
                 "images": ["images/Exam22_2_Q10_A.png", "images/Exam22_2_Q10_B.png", "images/Exam22_2_Q10_C.png", "images/Exam22_2_Q10_D.png"],
                 "labels": ["Probability", "Statistics"]
-            }, 
-            "5": {
-                "parts": {
-                    "b": "In 2019, people with a pre-pay mobile phone plan spent an average (mean) of €20.79 on their mobile phone each month (source: www.comreg.ie). In 2021, some students carried out a survey to see if this figure had changed. They surveyed a random sample of 500 people with pre-pay mobile phone plans. For this sample, the mean amount spent per month was €22.16 and the standard deviation was €8.12. Carry out a hypothesis test at the 5% level of significance to see if this shows a change in the mean monthly spend on mobile phones for people with a pre-pay plan. State your null hypothesis and your alternative hypothesis, state your conclusion, and give a reason for your conclusion."
-                },
-                "solutions": {
-                    "b": "Null Hypothesis: Average [mean] amount has not changed. Alternative Hypothesis: Average [mean] amount has changed. Conclusion: The average amount has changed. Calculations & Reason: 𝑧 = (22.16 - 20.79) / (8.12 / sqrt(500)) = 3.7726 ..., which is greater than 1.96 OR 20.79 ± 1.96 * (8.12 / sqrt(500)) = [20.07.., 21.51..], and 22.16 lies outside this range OR 22.16 ± 1.96 * (8.12 / sqrt(500)) = [21.44.., 22.87...], and 20.79 lies outside this range."
-                },
-                "images": ["images/Exam22_2_Q5_B.png"],
-                "labels": ["Probability", "bernoulli_trials"]
             }
         }
     }
