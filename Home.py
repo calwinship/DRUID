@@ -20,7 +20,6 @@ def check_password():
         if hmac.compare_digest(st.session_state["password"], st.secrets["password"]):
             st.session_state["password_correct"] = True
             st.session_state["api_key"] = st.secrets["openai_api_key"]
-            st.info(' \nGreat - Now get started with one of the lessons or exam questions on the left.')
             del st.session_state["password"]  # Don't store the password.
         else:
             st.session_state["password_correct"] = False
@@ -40,6 +39,8 @@ def check_password():
 
 if not check_password():
     st.stop()  # Do not continue if check_password is not True.
+else:
+    st.info(' \nPassword Correct - Now get started with one of the lessons or exam questions on the left.')
 
 
 
