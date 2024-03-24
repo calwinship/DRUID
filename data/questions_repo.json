@@ -1,4 +1,51 @@
-{
+{   "2019": {
+        "2": {
+            "6": {
+                "parts": {
+                    "a": "Two independent events F and S are represented in the Venn diagram shown to the student. 𝑃(F|S)=1/4, 𝑃(F⋂S)=1/5, 𝑃(S|F)=x, and P(F∪S)’ =𝑦, where x,y are not 0. Find the value of x and y.",
+                    "b": "In a club there are German, Irish and Spanish children only. There are 10 Spanish children. There are twice as many Irish children as German children. They are all in a group waiting to get on a swing. One child will be selected at random to go first and will not re-join the group. Then a second child will be selected at random to go next. The probability that the first child selected will be German and that the second child selected will not be German is 1/6. Find how many children are in the club."
+                },
+                "solutions": {
+                    "a": "𝑃(𝐹 ∩ 𝑆) = 𝑃(𝐹) × 𝑃(𝑆) since the events are independent; (1/5)= (9/20) ×𝑃(𝑆); 𝑃(𝑆)=(4/9); So 𝑃(𝑆|𝐹) = (4/9) - (1/5) = (11/45) = x; 𝑦 = 1 − (11/45) − (1/5) − (1/4) = 11/36; There are other ways for x such as: 𝑃 ( 𝑆 ) = 15 + 𝑥 Or ; 𝑃(𝐹|𝑆) = 𝑃(𝐹 ∩ 𝑆) = 𝑃(𝐹)  Or ; 𝑃(𝑆|𝐹) = 𝑃(𝑆 ∩ 𝐹) = 𝑃(𝑆) 1 𝑃(𝐹)",
+                    "b": "If n Germans then 2n Irish and 3n+10 children in total; (𝑛/3n+10) × (2𝑛 + 10)/(3n+9) = (1/6); 𝑛 = 5 German children.; There are 10 Irish (and 10 Spanish) so 25 children in the club. Or 25 by trial and improvement method. "
+                },
+                "images": [
+                    "images/Exam19_2_Q6a.png", 
+                    "images/Exam19_2_Q6b.png"
+                ],
+                "labels": [
+                    "Probability",
+                    "Venn_diagram"
+                ]
+            }, 
+            "8": {
+                "parts": {
+                    "ai": "A motoring magazine collected data on cars on a particular stretch of road. Certain details on 800 cars were recorded. (i) The ages of the 800 cars were recorded. 174 of them were new (less than 1 year old). Find the 95% confidence interval for the proportion of new cars on this road. Give your answer correct to 4 significant figures.",
+                    "aii": "The data on the speeds of these 800 vehicles is normally distributed with an average speed of 87·3 km per hour and a standard deviation of 12 km per hour. What proportion of cars on this stretch of road would you expect to find travelling at over 95 km per hour?", 
+                    "aiii": "The driver of a car was told that 70% of all the speeds recorded were higher than his speed. Find the speed at which this driver was recorded. Give your answer correct to the nearest whole number", 
+                    "bi": "A road safety programme was carried out in the area using posters, signs and radio slots. After the programme the motoring magazine recorded the speeds of 100 passing cars. The magazine carried out a hypothesis test, at the 5% level of significance, to determine whether the average speed had changed. The 𝑝-value of the test was 0·024. What can the magazine conclude based on this 𝑝-value? Give a reason for your answer.",
+                    "bii": "The magazine found that the average speed of this sample was lower than the previously established average speed of 87·3 km per hour. Find the average speed of the cars in this sample, correct to 1 decimal place."
+                },
+                "solutions": {
+                    "ai": "Confidence interval; 0∙2175±1∙96 * sqrt(((174/800)*(626/800))/800); 0∙1889 < 𝑝 < 0∙2461; Or; 18∙89% < 𝑝 < 24∙61%",
+                    "aii": "(𝑥 − 𝑥̅ )/𝜎 = 0∙64167 (z score); 𝑝(𝑍 ≤ 0∙64167) = 0∙7389; 𝑃(𝑧 ≥ 0∙64) = 1 − 0∙7389; = 0∙2611 or 26∙11%", 
+                    "aiii": "𝑧 = −0∙52 = (𝑥 − 87.3)/12; => 𝑥 = 81∙06 km/h ; 𝑥 = 81 km/h", 
+                    "bi": "Average speed has changed p-value < 0·05",
+                    "bii": "0∙024 = 2(1 − 𝑃(𝑧 ≤ |𝑇|) => 𝑃(𝑧 ≤ |𝑇|) = 0∙988; Therefore z = 2∙26 or − 2∙26.; Because the mean has reduced 𝑧 = −2.26; −2∙26 = (𝑥 − 87.3) / ((12)/(√100)); => 𝑥 = 84∙588 km/h => 𝑥 = 84∙6"
+                },
+                "images": [
+                    "images/Exam19_2_Q8a.png",
+                    "images/Exam19_2_Q8b.png"
+                ],
+                "labels": [
+                    "Statistics",
+                    "Confidence_interval",
+                    "z_score"
+                ]
+            }
+        }
+    }, 
+    
     "2021": {
         "2": {
             "8": {
