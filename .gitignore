@@ -1,6 +1,12 @@
 venv/
 __pycache__/
 *.pyc
-*.log
 *.sqlite3
 .env
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore sensitive or private information
+secrets.toml
