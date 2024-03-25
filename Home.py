@@ -1,7 +1,7 @@
 import streamlit as st
 import hmac
 
-st.image('logos/logo_trans.png')
+st.image('logos/logo_trans_2.png')
 
 st.write(''' \n\n\n\n\n
             
