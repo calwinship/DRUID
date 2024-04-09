@@ -2,11 +2,11 @@
         "2": {
             "6": {
                 "parts": {
-                    "a": "Two independent events F and S are represented in the Venn diagram shown to the student. 𝑃(F|S)=1/4, 𝑃(F⋂S)=1/5, 𝑃(S|F)=x, and P(F∪S)’ =𝑦, where x,y are not 0. Find the value of x and y.",
+                    "a": "Two independent events F and S are represented in the Venn diagram shown to the student. 𝑃(F\\S)=1/4, 𝑃(F⋂S)=1/5, 𝑃(S\\F)=x, and P(F∪S)’ =𝑦, where x,y are not 0. Find the value of x and y.",
                     "b": "In a club there are German, Irish and Spanish children only. There are 10 Spanish children. There are twice as many Irish children as German children. They are all in a group waiting to get on a swing. One child will be selected at random to go first and will not re-join the group. Then a second child will be selected at random to go next. The probability that the first child selected will be German and that the second child selected will not be German is 1/6. Find how many children are in the club."
                 },
                 "solutions": {
-                    "a": "𝑃(𝐹 ∩ 𝑆) = 𝑃(𝐹) × 𝑃(𝑆) since the events are independent; (1/5)= (9/20) ×𝑃(𝑆); 𝑃(𝑆)=(4/9); So 𝑃(𝑆|𝐹) = (4/9) - (1/5) = (11/45) = x; 𝑦 = 1 − (11/45) − (1/5) − (1/4) = 11/36; There are other ways for x such as: 𝑃 ( 𝑆 ) = 15 + 𝑥 Or ; 𝑃(𝐹|𝑆) = 𝑃(𝐹 ∩ 𝑆) = 𝑃(𝐹)  Or ; 𝑃(𝑆|𝐹) = 𝑃(𝑆 ∩ 𝐹) = 𝑃(𝑆) 1 𝑃(𝐹)",
+                    "a": "𝑃(𝐹 ∩ 𝑆) = 𝑃(𝐹) × 𝑃(𝑆) since the events are independent; (1/5)= (9/20) ×𝑃(𝑆); 𝑃(𝑆)=(4/9); So 𝑃(𝑆\\𝐹) = (4/9) - (1/5) = (11/45) = x; 𝑦 = 1 − (11/45) − (1/5) − (1/4) = 11/36; There are other ways for x such as: 𝑃 ( 𝑆 ) = 15 + 𝑥 Or ; 𝑃(𝐹\\𝑆) = 𝑃(𝐹 ∩ 𝑆) = 𝑃(𝐹)  Or ; 𝑃(𝑆\\𝐹) = 𝑃(𝑆 ∩ 𝐹) = 𝑃(𝑆) 1 𝑃(𝐹)",
                     "b": "If n Germans then 2n Irish and 3n+10 children in total; (𝑛/3n+10) × (2𝑛 + 10)/(3n+9) = (1/6); 𝑛 = 5 German children.; There are 10 Irish (and 10 Spanish) so 25 children in the club. Or 25 by trial and improvement method. "
                 },
                 "images": [
