@@ -27,6 +27,14 @@ with st.expander('Links'):
 
 with st.expander("Q1"):
     st.image("images/Exam17_2_Q8a.png")
+    st.image("images/Exam17_2_Q8b.png")
+
+with st.expander("Q2"):
+    st.image("images/Exam18_2_Q8.png")
+
+with st.expander("Q3"):
+    st.image("images/Exam18_2_Q2a.png")
+    st.image("images/Exam18_2_Q2b.png")
 
 
 # config items
