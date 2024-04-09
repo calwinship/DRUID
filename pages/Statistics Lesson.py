@@ -20,10 +20,10 @@ json_file_path = 'data/lessons_repo.json'
 with open(json_file_path, 'r') as f:
     file = json.load(f)
 exam = file[topic]['objectives']
-images =  exam['images']
+# images =  exam['images']
 
-for image in images:
-    st.image(image)
+# for image in images:
+#     st.image(image)
 
 try :
     client = initialise_openai_client(st.session_state["api_key"])
