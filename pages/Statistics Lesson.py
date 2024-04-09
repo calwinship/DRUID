@@ -5,12 +5,19 @@ import json
 
 
 
+st.header(':blue[Statistics 2]')
+st.divider()
+st.write('This lesson starts with questions')
+
 link1 = '[The Art of Statistics Home Page](https://artofstat.com/web-apps)'
-st.markdown('hello'+link1, unsafe_allow_html=True)
+st.markdown('hello '+link1, unsafe_allow_html=True)
 link2 = '[The Normal Distribution](https://istats.shinyapps.io/NormalDist/)'
 st.markdown(link2, unsafe_allow_html=True)
 link3 = '[Sampling from Any Distribution](https://istats.shinyapps.io/SampDist_discrete/)'
 st.markdown(link3, unsafe_allow_html=True)
+st.info('hello '+link1, unsafe_allow_html=True)
+
+st.divider()
 
 
 # config items
@@ -26,7 +33,7 @@ id = f"{topic}{objective}"
 json_file_path = 'data/lessons_repo.json'
 with open(json_file_path, 'r') as f:
     file = json.load(f)
-exam = file[topic]['objectives']
+objectives = file[topic]['objectives'][objective]
 # images =  exam['images']
 
 # for image in images:
@@ -36,8 +43,6 @@ try :
     client = initialise_openai_client(st.session_state["api_key"])
 except KeyError:
     st.error('Insert your KEY in the home menu before starting')
-
-objectives = exam
 
 
 if id not in st.session_state:
@@ -51,15 +56,19 @@ for message in prompt_template:
             st.markdown(message["content"])
 
 # React to user input
-prompt = st.chat_input("Type here")  
+obj_button = st.button("Click for objectives")
+
 
 try:
-    if prompt:
+    if obj_button:
+        prompt = st.chat_input("Type here")
         # Display user message in chat message container
-        st.chat_message("user").markdown(prompt)
+        st.chat_message("user").markdown("This is the objective")
         # Add user message to chat history
-        prompt_template.append({"role": "user", "content": prompt})
-
+        if prompt: 
+            prompt_template.append({"role": "user", "content": prompt})
+        else:
+            prompt_template.append({"role": "user", "content": "Could you explain the objectives in simple language with a plan of how we will learn them"})
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
             stream = client.chat.completions.create(
