@@ -5,7 +5,7 @@ import json
 
 
 
-st.header('Statistics :blue[2]')
+st.header(':blue[Statistics] 2')
 
 try :
     client = initialise_openai_client(st.session_state["api_key"])
