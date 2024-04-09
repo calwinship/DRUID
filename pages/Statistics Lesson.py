@@ -60,12 +60,12 @@ with st.expander('Concept 1: Sampling Variability'):
     # st.info()
     # st.write("This is a self-directed lesson meaning you need to extract the information to answer the question and understand the topic. Take notes!")
         # Display chat messages from history on app rerun
-    prompt = st.chat_input("Type here")
+    
     for message in prompt_template:
         if message["role"] != 'system':
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
-    
+    prompt = st.chat_input("Type here")
     try:
         if prompt:
             # Display user message in chat message container
