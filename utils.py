@@ -10,6 +10,32 @@ def initialise_openai_client(api_key):
     except KeyError:
         return None
     
+def get_lesson_prompt_template(id, name, objectives):
+    # Initialise chat history
+    if id not in st.session_state:
+        st.session_state.id = [
+            {
+                'role': 'system',
+                'content': f'''
+                You are a high school math teacher, and today you are working with {name} on a maths question. 
+                Use accessible language. 
+                Your role is to guide, not to provide direct answers or perform calculations. 
+                Today's lesson objectives are: {objectives}.
+                Start by outlining the objectives and go though each one at a time. 
+                Foster an environment where {name} is motivated to find the solutions independently. Relate to real world examples and related topics if useful.
+                All equations and mathematical expressions should be enclosed within two dollar signs ($$) to ensure clarity, for example $\frac...$. 
+                When you are working through questions, go one step at a time and don't be afraid to say you don't know the answer if you are unsure.
+                '''
+                }, 
+            {
+                "role": "assistant", 
+                "content": f"Type anything to get the lesson objectives."
+                }
+                ]
+        return st.session_state.id
+    else:
+        return st.session_state.id
+    
 def get_prompt_template(id, name, questions, solutions):
     # Initialise chat history
     if id not in st.session_state:

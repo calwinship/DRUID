@@ -1,0 +1,29 @@
+{   "statistics2": {
+                "objectives": {
+                    "a": "Recognise sampling variability and use appropriate tools to describe variability drawing inferences about the population from the sample",
+                    "b": "Use the concept of margin of error and understand that an increased confidence level implies wider intervals", 
+                    "c": "Construct 95% confidence intervals for the population mean from a large sample and for the population proportion, in both cases using z-tables",
+                    "d": "Conduct an hypothesis test for a population proportion using confidence intervals",
+                    "e": "Perform univariate large sample hypothesis tests of the population mean (two tailed z-test only)",
+                    "f": "Use and interpret p-values"
+                },
+                "solutions": {
+                    "a": "𝑃(𝐹 ∩ 𝑆) = 𝑃(𝐹) × 𝑃(𝑆) since the events are independent; (1/5)= (9/20) ×𝑃(𝑆); 𝑃(𝑆)=(4/9); So 𝑃(𝑆\\𝐹) = (4/9) - (1/5) = (11/45) = x; 𝑦 = 1 − (11/45) − (1/5) − (1/4) = 11/36; There are other ways for x such as: 𝑃 ( 𝑆 ) = 15 + 𝑥 Or ; 𝑃(𝐹\\𝑆) = 𝑃(𝐹 ∩ 𝑆) = 𝑃(𝐹)  Or ; 𝑃(𝑆\\𝐹) = 𝑃(𝑆 ∩ 𝐹) = 𝑃(𝑆) 1 𝑃(𝐹)",
+                    "b": "If n Germans then 2n Irish and 3n+10 children in total; (𝑛/3n+10) × (2𝑛 + 10)/(3n+9) = (1/6); 𝑛 = 5 German children.; There are 10 Irish (and 10 Spanish) so 25 children in the club. Or 25 by trial and improvement method."
+                },
+                "images": [
+                    "images/Exam19_2_Q6a.png", 
+                    "images/Exam19_2_Q6b.png"
+                ],
+                "labels": [
+                    "Probability",
+                    "Venn_diagram"
+                ]
+            }
+    }
+
+
+
+
+
+
