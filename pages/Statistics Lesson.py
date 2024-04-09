@@ -12,7 +12,7 @@ try :
 except KeyError:
     st.error('Insert your KEY in the home menu before starting')
 
-st.divider()
+# st.divider()
 # st.write('This lesson starts with questions')
 
 
@@ -52,15 +52,17 @@ if id not in st.session_state:
     st.session_state[id] = get_lesson_prompt_template(id, name, objectives)
 prompt_template = st.session_state[id]
 
-# Display chat messages from history on app rerun
-for message in prompt_template:
-    if message["role"] != 'system':
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+
 
 with st.expander('concept 1'):
-    st.write(f"The objective is: {objective}")
+    st.write("The objective is: ")
+    st.write(f"{objectives}")
     st.write("This is a self-directed lesson meaning you need to extract the information to answer the question and understand the topic. Take notes!")
+        # Display chat messages from history on app rerun
+    for message in prompt_template:
+        if message["role"] != 'system':
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
     prompt = st.chat_input("Type here")
     try:
         if prompt:
