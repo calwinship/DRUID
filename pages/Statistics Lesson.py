@@ -64,15 +64,15 @@ with st.expander('Links'):
     link5 = '[Inference for a Population Mean](https://istats.shinyapps.io/Inference_mean/)'
     link6 = '[Inference for a Population Proportion](https://istats.shinyapps.io/Inference_prop/)'   
     
-    st.header('Two Types of Distributions - Remember the binomial?')
+    st.subheader('Two Types of Distributions - Remember the binomial?')
     st.info(link2)
     st.info(link3)
-    st.write('Using the sample to make guesses about the population')
+    st.subheader('Using the sample to make guesses about the population')
     st.info(link5)
     st.info(link6)
-    st.write('The central limit theorem')
+    st.subheader('The central limit theorem')
     st.info(link4)
-    st.write('For more, see:')
+    st.subheader('For more, see:')
     st.info(link1)
 
 with st.expander("Q1"):
