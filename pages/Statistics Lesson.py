@@ -4,9 +4,9 @@ from config import CONFIG
 import json
 
 
-st.heading('')
+
 link1 = '[The Art of Statistics Home Page](https://artofstat.com/web-apps)'
-st.markdown(link1, unsafe_allow_html=True)
+st.markdown('hello'+link1, unsafe_allow_html=True)
 link2 = '[The Normal Distribution](https://istats.shinyapps.io/NormalDist/)'
 st.markdown(link2, unsafe_allow_html=True)
 link3 = '[Sampling from Any Distribution](https://istats.shinyapps.io/SampDist_discrete/)'
