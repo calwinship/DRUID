@@ -66,7 +66,7 @@ prompt = st.chat_input("Type here")
 with st.expander('Concept 1: Sampling Variability'):
     st.write("The objective is: ")
     for objective in objectives:
-        st.success(f"{objective.values}")
+        st.success(f"{objectives[objective]}")
     # st.info()
     # st.write("This is a self-directed lesson meaning you need to extract the information to answer the question and understand the topic. Take notes!")
         # Display chat messages from history on app rerun
