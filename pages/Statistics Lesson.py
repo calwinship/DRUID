@@ -63,8 +63,8 @@ with st.expander('Links'):
     link4 = '[Sampling Distribution of the Sample Mean](https://istats.shinyapps.io/SampDist_discrete/)'
     link5 = '[Inference for a Population Mean](https://istats.shinyapps.io/Inference_mean/)'
     link6 = '[Inference for a Population Proportion](https://istats.shinyapps.io/Inference_prop/)'   
-    st.info(link1)
-    st.write('Two Types of Distributions - Remember the binomial?')
+    
+    st.heading('Two Types of Distributions - Remember the binomial?')
     st.info(link2)
     st.info(link3)
     st.write('Using the sample to make guesses about the population')
@@ -72,6 +72,8 @@ with st.expander('Links'):
     st.info(link6)
     st.write('The central limit theorem')
     st.info(link4)
+    st.write('For more, see:')
+    st.info(link1)
 
 with st.expander("Q1"):
     st.image("images/Exam17_2_Q8a.png")
