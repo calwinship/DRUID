@@ -29,7 +29,7 @@ def get_lesson_prompt_template(id, name, objectives):
                 }, 
             {
                 "role": "assistant", 
-                "content": f"Type anything to get the lesson objectives."
+                "content": f"This is a self-directed lesson meaning you need to extract the information to fully understand the objective. At the start this could mean asking what different words mean. Take notes!"
                 }
                 ]
         return st.session_state.id

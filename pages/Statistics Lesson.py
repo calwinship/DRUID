@@ -56,8 +56,8 @@ prompt_template = st.session_state[id]
 
 with st.expander('concept 1'):
     st.write("The objective is: ")
-    st.write(f"{objectives}")
-    st.write("This is a self-directed lesson meaning you need to extract the information to answer the question and understand the topic. Take notes!")
+    st.info(f"{objectives}")
+    # st.write("This is a self-directed lesson meaning you need to extract the information to answer the question and understand the topic. Take notes!")
         # Display chat messages from history on app rerun
     for message in prompt_template:
         if message["role"] != 'system':
