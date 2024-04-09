@@ -64,7 +64,7 @@ with st.expander('Links'):
     link5 = '[Inference for a Population Mean](https://istats.shinyapps.io/Inference_mean/)'
     link6 = '[Inference for a Population Proportion](https://istats.shinyapps.io/Inference_prop/)'   
     
-    st.heading('Two Types of Distributions - Remember the binomial?')
+    st.header('Two Types of Distributions - Remember the binomial?')
     st.info(link2)
     st.info(link3)
     st.write('Using the sample to make guesses about the population')
