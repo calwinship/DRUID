@@ -50,7 +50,7 @@ id = f"{topic}{objective}"
 json_file_path = 'data/lessons_repo.json'
 with open(json_file_path, 'r') as f:
     file = json.load(f)
-objectives = file[topic]['objectives'][objective]
+objectives = file[topic]['objectives']#[objective]
 # images =  exam['images']
 
 # for image in images:
