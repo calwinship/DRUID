@@ -3,8 +3,15 @@ from utils import initialise_openai_client, get_lesson_prompt_template
 from config import CONFIG
 import json
 
-link = '[The Art of Statistics Home Page](https://artofstat.com/web-apps)'
-st.markdown(link, unsafe_allow_html=True)
+
+st.heading('')
+link1 = '[The Art of Statistics Home Page](https://artofstat.com/web-apps)'
+st.markdown('hello' + link1, unsafe_allow_html=True)
+link2 = '[The Normal Distribution](https://istats.shinyapps.io/NormalDist/)'
+st.markdown(link1, unsafe_allow_html=True)
+link3 = '[Sampling from Any Distribution](https://istats.shinyapps.io/SampDist_discrete/)'
+st.markdown(link3, unsafe_allow_html=True)
+
 
 # config items
 name = CONFIG["name"]
@@ -44,7 +51,7 @@ for message in prompt_template:
             st.markdown(message["content"])
 
 # React to user input
-prompt = st.chat_input("Enter your answer here")  
+prompt = st.chat_input("Type here")  
 
 try:
     if prompt:
