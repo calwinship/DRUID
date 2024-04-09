@@ -55,32 +55,44 @@ for message in prompt_template:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-# React to user input
-obj_button = st.button("Click for objectives")
+with st.expander('concept 1'):
+    # React to user input
+    obj_button = st.button("Lesson Objectives")
 
 
-try:
-    if obj_button:
-        prompt = st.chat_input("Type here")
-        # Display user message in chat message container
-        st.chat_message("user").markdown("This is the objective")
-        # Add user message to chat history
-        if prompt: 
-            prompt_template.append({"role": "user", "content": prompt})
-        else:
-            prompt_template.append({"role": "user", "content": "Could you explain the objectives in simple language with a plan of how we will learn them"})
-        # Display assistant response in chat message container
-        with st.chat_message("assistant"):
-            stream = client.chat.completions.create(
-                model=llm_model,
-                messages=[
-                    {"role": m["role"], "content": m["content"]}
-                    for m in prompt_template
-                ],
-                temperature=temperature,
-                stream=True
-            )
-            response = st.write_stream(stream)
-        prompt_template.append({"role": "assistant", "content": response})
-except NameError:
-    st.error('Insert your KEY in the home menu before starting')
+    try:
+        if obj_button:
+            prompt = st.chat_input("Type here")
+            # Display user message in chat message container
+            st.chat_message("user").markdown(prompt)
+            # Add user message to chat history
+            if prompt: 
+                prompt_template.append({"role": "user", "content": prompt})
+                with st.chat_message("assistant"):
+                    stream = client.chat.completions.create(
+                        model=llm_model,
+                        messages=[
+                            {"role": m["role"], "content": m["content"]}
+                            for m in prompt_template
+                        ],
+                        temperature=temperature,
+                        stream=True
+                    )
+                    response = st.write_stream(stream)
+            else:
+                prompt_template.append({"role": "user", "content": "Could you explain the objective briefly in simple language with a plan of how we will learn them"})
+                with st.chat_message("assistant"):
+                    stream = client.chat.completions.create(
+                        model=llm_model,
+                        messages=[
+                            {"role": m["role"], "content": m["content"]}
+                            for m in prompt_template
+                        ],
+                        temperature=temperature,
+                        stream=True
+                    )
+                    response = st.write_stream(stream)
+            
+            prompt_template.append({"role": "assistant", "content": response})
+    except NameError:
+        st.error('Insert your KEY in the home menu before starting')
