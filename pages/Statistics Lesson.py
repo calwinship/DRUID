@@ -25,8 +25,6 @@ with st.expander('Links'):
     st.info(link2)
     st.info(link3)
 
-st.divider()
-
 
 # config items
 name = CONFIG["name"]
