@@ -16,25 +16,7 @@ except KeyError:
 # st.write('This lesson starts with questions')
 
 
-with st.expander('Links'):
-    st.write("First, go through each of these pages. Some pages have toggle heading at the top. Go through these and think of how you can apply them to the questions later. Write down some interesting observations.")
-    link1 = '[The Art of Statistics Home Page](https://artofstat.com/web-apps)'
-    link2 = '[The Normal Distribution](https://istats.shinyapps.io/NormalDist/)'
-    link3 = '[Sampling from Any Distribution](https://istats.shinyapps.io/SampDist_discrete/)'
-    st.info(link1)
-    st.info(link2)
-    st.info(link3)
 
-with st.expander("Q1"):
-    st.image("images/Exam17_2_Q8a.png")
-    st.image("images/Exam17_2_Q8b.png")
-
-with st.expander("Q2"):
-    st.image("images/Exam18_2_Q8.png")
-
-with st.expander("Q3"):
-    st.image("images/Exam18_2_Q2a.png")
-    st.image("images/Exam18_2_Q2b.png")
 
 
 # config items
@@ -63,8 +45,8 @@ prompt_template = st.session_state[id]
 
 prompt = st.chat_input("Type here")
 
-with st.expander('Concept 1: Sampling Variability'):
-    st.write("The objective is: ")
+with st.expander('Objectives'):
+    st.write("The objectives of this chapter are: ")
     for objective in objectives:
         st.success(f"{objectives[objective]}")
     # st.info()
@@ -98,3 +80,24 @@ with st.expander('Concept 1: Sampling Variability'):
             prompt_template.append({"role": "assistant", "content": response})
     except NameError:
         st.error('Insert your KEY in the home menu before starting')
+
+
+with st.expander('Links'):
+    st.write("First, go through each of these pages. Some pages have toggle heading at the top. Go through these and think of how you can apply them to the questions later. Write down some interesting observations.")
+    link1 = '[The Art of Statistics Home Page](https://artofstat.com/web-apps)'
+    link2 = '[The Normal Distribution](https://istats.shinyapps.io/NormalDist/)'
+    link3 = '[Sampling from Any Distribution](https://istats.shinyapps.io/SampDist_discrete/)'
+    st.info(link1)
+    st.info(link2)
+    st.info(link3)
+
+with st.expander("Q1"):
+    st.image("images/Exam17_2_Q8a.png")
+    st.image("images/Exam17_2_Q8b.png")
+
+with st.expander("Q2"):
+    st.image("images/Exam18_2_Q8.png")
+
+with st.expander("Q3"):
+    st.image("images/Exam18_2_Q2a.png")
+    st.image("images/Exam18_2_Q2b.png")
