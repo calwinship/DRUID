@@ -25,6 +25,9 @@ with st.expander('Links'):
     st.info(link2)
     st.info(link3)
 
+with st.expander("Q1"):
+    st.image("DRUID/images/Exam17_2_Q8a.png")
+
 
 # config items
 name = CONFIG["name"]
