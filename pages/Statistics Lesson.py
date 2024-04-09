@@ -52,7 +52,7 @@ if id not in st.session_state:
     st.session_state[id] = get_lesson_prompt_template(id, name, objectives)
 prompt_template = st.session_state[id]
 
-
+prompt = st.chat_input("Type here")
 
 with st.expander('Concept 1: Sampling Variability'):
     st.write("The objective is: ")
@@ -65,7 +65,7 @@ with st.expander('Concept 1: Sampling Variability'):
         if message["role"] != 'system':
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
-    prompt = st.chat_input("Type here")
+    
     try:
         if prompt:
             # Display user message in chat message container
