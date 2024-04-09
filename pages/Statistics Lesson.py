@@ -15,7 +15,7 @@ link2 = '[The Normal Distribution](https://istats.shinyapps.io/NormalDist/)'
 st.markdown(link2, unsafe_allow_html=True)
 link3 = '[Sampling from Any Distribution](https://istats.shinyapps.io/SampDist_discrete/)'
 st.markdown(link3, unsafe_allow_html=True)
-st.info('hello '+link1, unsafe_allow_html=True)
+st.info('hello '+link1)
 
 st.divider()
 
