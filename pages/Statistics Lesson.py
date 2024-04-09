@@ -9,13 +9,18 @@ st.header(':blue[Statistics 2]')
 st.divider()
 st.write('This lesson starts with questions')
 
-link1 = '[The Art of Statistics Home Page](https://artofstat.com/web-apps)'
-st.markdown('hello '+link1, unsafe_allow_html=True)
-link2 = '[The Normal Distribution](https://istats.shinyapps.io/NormalDist/)'
-st.markdown(link2, unsafe_allow_html=True)
-link3 = '[Sampling from Any Distribution](https://istats.shinyapps.io/SampDist_discrete/)'
-st.markdown(link3, unsafe_allow_html=True)
-st.info('hello '+link1)
+
+with st.expander('Links to the stats simulator'):
+    st.write("First, go through each of these pages. Some pages have toggle heading at the top. Go through these and think of how you can apply them to the questions later. Write down the answers to the questions I have provided.")
+    link1 = '[The Art of Statistics Home Page](https://artofstat.com/web-apps)'
+    st.markdown("--" + link1, unsafe_allow_html=True)
+    
+    link2 = '[The Normal Distribution](https://istats.shinyapps.io/NormalDist/)'
+    st.markdown("--" + link2, unsafe_allow_html=True)
+    
+    link3 = '[Sampling from Any Distribution](https://istats.shinyapps.io/SampDist_discrete/)'
+    st.markdown("--" + link3, unsafe_allow_html=True)
+    st.info("--" + link1)
 
 st.divider()
 
