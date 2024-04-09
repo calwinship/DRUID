@@ -6,6 +6,12 @@ import json
 
 
 st.header(':blue[Statistics 2]')
+
+try :
+    client = initialise_openai_client(st.session_state["api_key"])
+except KeyError:
+    st.error('Insert your KEY in the home menu before starting')
+
 st.divider()
 # st.write('This lesson starts with questions')
 
@@ -40,11 +46,6 @@ objectives = file[topic]['objectives'][objective]
 
 # for image in images:
 #     st.image(image)
-
-try :
-    client = initialise_openai_client(st.session_state["api_key"])
-except KeyError:
-    st.error('Insert your KEY in the home menu before starting')
 
 
 if id not in st.session_state:
