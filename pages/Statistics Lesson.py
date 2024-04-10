@@ -46,7 +46,7 @@ prompt_template = st.session_state[id]
 prompt = st.chat_input("Type here")
 
 with st.expander('Objectives'):
-    st.write("The goal this week is to be able to talk about any of the objectives below. You will first go through some interactive webpages and then answer questions. This time the chatbot doesn't have the answer so you need to articulate the information you need. Use the chatbot to ask any generic quesions from the interactive pages, objectives, and questions.")
+    st.write("After this week, you should be able to talk about each of the objectives below. You will first go through some interactive webpages and then answer questions. This time the chatbot doesn't have the answer so you need to articulate the information you need. Use the chatbot to ask any generic quesions from the interactive pages, objectives, and questions.")
     st.write("The objectives of this chapter are: ")
     for objective in objectives:
         st.success(f"{objectives[objective]}")
