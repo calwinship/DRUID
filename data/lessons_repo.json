@@ -19,6 +19,44 @@
                     "Probability",
                     "Venn_diagram"
                 ]
+            }, 
+        "circle1": {
+                "objectives": {
+                    "a": "Find the equation of a circle with centre (0,0) and radius length r",
+                    "b": "Find the equation of a circle with centre (h,k) and radius length r", 
+                    "c": "Work with equations of the form x^2 + y^2 + 2gx + 2fy + c = 0",
+                    "d": "Calculate the points of intersection of a line and a circle"
+                },
+                "solutions": {
+                    "a": "",
+                    "b": ""
+                },
+                "images": [
+                    "images/Exam23_2_Q4a.png", 
+                    "images/Exam23_2_Q4b.png"
+                ],
+                "labels": [
+                    "circle"
+                ]
+            },
+        "circle2": {
+                "objectives": {
+                    "a": "Prove that a line is a tangent to a circle",
+                    "b": "Prove that a line does not intersect a circle", 
+                    "c": "Show whether a point is inside, outside or on a circle", 
+                    "d": "Find the equation of tangents to a circle"
+                },
+                "solutions": {
+                    "a": "",
+                    "b": ""
+                },
+                "images": [
+                    "images/Exam23_2_Q4a.png", 
+                    "images/Exam23_2_Q4b.png"
+                ],
+                "labels": [
+                    "circle"
+                ]
             }
     }
 
