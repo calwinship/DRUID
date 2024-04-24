@@ -46,7 +46,7 @@ prompt_template = st.session_state[id]
 prompt = st.chat_input("Type here")
 
 with st.expander('Objectives'):
-    st.write("After this week, you should be able to talk about each of the objectives below. You will first go through some interactive webpages and then answer questions. This time the chatbot doesn't have the answer so you need to articulate the information you need. Use the chatbot to ask any generic quesions from the interactive pages, objectives, and questions.")
+    st.write("After this week, you should be able to talk about each of the objectives below. Read them now and come back to make sure you understand them at the end. Use the chatbot to guide your learning but not for answers.")
     st.write("The objectives of this chapter are: ")
     for objective in objectives:
         st.success(f"{objectives[objective]}")
@@ -56,8 +56,8 @@ with st.expander('Objectives'):
 
 
 with st.expander('Tasks'):
-    st.info("Task 1: Go through [The Circle](https://thirdspacelearning.com/gcse-maths/geometry-and-measure/equation-of-a-circle/). Answer each of the questions.")
-    st.info("Task 2: Reproduce the images below with [Geogebra](https://www.geogebra.org/calculator)")
+    st.info("Task 1: Go through [The Circle Lesson](https://thirdspacelearning.com/gcse-maths/geometry-and-measure/equation-of-a-circle/). Write down the answers for each question.")
+    st.info("Task 2: Reproduce the images below with [Geogebra](https://www.geogebra.org/calculator). Write down the answers for each question.")
     st.image("images/circle1.png")
     st.image("images/circle2.png")
     st.image("images/circle3.png")
@@ -68,6 +68,7 @@ with st.expander('Tasks'):
 
 
 with st.expander("Q1"):
+    st.write("Give this question a go if you have time. Send all work, including from the questions above.")
     st.image("images/Exam23_2_Q4a.png")
     st.image("images/Exam23_2_Q4b.png")
 
