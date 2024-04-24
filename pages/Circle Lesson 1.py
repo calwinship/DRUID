@@ -68,8 +68,8 @@ with st.expander('Tasks'):
 
 
 with st.expander("Q1"):
-    st.image("images/Exam23_2_Q4a.png.png")
-    st.image("images/Exam23_2_Q4b.pngb.png")
+    st.image("images/Exam23_2_Q4a.png")
+    st.image("images/Exam23_2_Q4b.png")
 
 # with st.expander("Q2"):
 #     st.image("images/Exam18_2_Q8.png")
