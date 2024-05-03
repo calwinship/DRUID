@@ -3,7 +3,7 @@ from openai import OpenAI
 
 name = 'Anna'
 
-st.image('music.png')
+st.image('images/music.png')
 st.audio('sheet_music.wav')
 st.info('''
                 -  Continue the given opening to make a 16-bar melody.\n
