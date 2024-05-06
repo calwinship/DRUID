@@ -5,7 +5,7 @@ import json
 
 
 
-st.header(':blue[Statistics] 2')
+st.header(':blue[The Circle]')
 
 try :
     client = initialise_openai_client(st.session_state["api_key"])
@@ -24,7 +24,7 @@ name = CONFIG["name"]
 llm_model = CONFIG["llm_model"]
 temperature = CONFIG["temperature"]
 
-topic = 'statistics2'
+topic = 'circle'
 objective = 'a'
 id = f"{topic}{objective}"
 

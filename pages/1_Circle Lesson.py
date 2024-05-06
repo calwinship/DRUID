@@ -46,7 +46,7 @@ prompt_template = st.session_state[id]
 prompt = st.chat_input("Type here")
 
 with st.expander('Objectives'):
-    st.write("After this week, you should be able to talk about each of the objectives below. Read them now and come back to make sure you understand them at the end. Use the chatbot to guide your learning but not for answers.")
+    st.write("After this week, you should be able to talk about each of the objectives below. Read them now and come back to make sure you understand them at the end. Use the chatbot to guide your learning through each objective.")
     st.write("The objectives of this chapter are: ")
     for objective in objectives:
         st.success(f"{objectives[objective]}")
@@ -71,6 +71,11 @@ with st.expander("Q1"):
     st.write("Give this question a go if you have time. Send all work, including from the questions above.")
     st.image("images/Exam23_2_Q4a.png")
     st.image("images/Exam23_2_Q4b.png")
+
+with st.expander("Q2"):
+    st.write("Give this question a go if you have time. Send all work, including from the questions above.")
+    st.image("images/Exam22_2_Q3a")
+    st.image("images/Exam22_2_Q3b")
 
 # with st.expander("Q2"):
 #     st.image("images/Exam18_2_Q8.png")
