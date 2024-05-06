@@ -74,8 +74,8 @@ with st.expander("Q1"):
 
 with st.expander("Q2"):
     st.write("Give this question a go if you have time. Send all work, including from the questions above.")
-    st.image("images/Exam22_2_Q3a")
-    st.image("images/Exam22_2_Q3b")
+    st.image("images/Exam22_2_Q3a.png")
+    st.image("images/Exam22_2_Q3b.png")
 
 # with st.expander("Q2"):
 #     st.image("images/Exam18_2_Q8.png")
