@@ -82,7 +82,7 @@ with st.expander("Q2"):
     st.image("images/Exam22_2_Q3b.png")
 
 with st.expander("Q2 - Marking Scheme"):
-    st.image("imagesMS22_2_Q3a.png")
+    st.image("images/MS22_2_Q3a.png")
     st.image("images/MS22_2_Q3b.png")
 
 # with st.expander("Q2"):
