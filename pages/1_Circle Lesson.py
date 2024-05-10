@@ -72,10 +72,18 @@ with st.expander("Q1"):
     st.image("images/Exam23_2_Q4a.png")
     st.image("images/Exam23_2_Q4b.png")
 
+with st.expander("Q1 - Marking Scheme"):
+    st.image("images/MS23_2_Q4a.png")
+    st.image("images/MS23_2_Q4b.png")
+
 with st.expander("Q2"):
     st.write("Give this question a go if you have time. Send all work, including from the questions above.")
     st.image("images/Exam22_2_Q3a.png")
     st.image("images/Exam22_2_Q3b.png")
+
+with st.expander("Q2 - Marking Scheme"):
+    st.image("imagesMS22_2_Q3a.png")
+    st.image("images/MS22_2_Q3b.png")
 
 # with st.expander("Q2"):
 #     st.image("images/Exam18_2_Q8.png")
