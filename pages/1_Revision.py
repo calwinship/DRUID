@@ -44,7 +44,7 @@ prompt = st.chat_input("Type here")
 
 
 
-st.info('This revision lesson covers Algebra 1,2, 3 and Complex Numbers. Revise the topics as you go through the questions. Use the chatbot below for assistance.')
+st.info('This revision lesson covers Algebra 1,2, 3 and Complex Numbers. Revise the topics as you go through the questions. Use the chatbot below for assistance. ')
 
 
 with st.expander("Q1"):
