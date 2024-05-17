@@ -42,24 +42,9 @@ prompt_template = st.session_state[id]
 
 prompt = st.chat_input("Type here")
 
-with st.expander('Topics'):
-    st.write("The objectives of this chapter are: ")
-    st.info('Algebra 1')
-    st.write('Algebra 2')
-    st.write('Algebra 3')
-        
 
 
-with st.expander('Tasks'):
-    st.info("Task 1: Go through [The Circle Lesson](https://thirdspacelearning.com/gcse-maths/geometry-and-measure/equation-of-a-circle/). Write down the answers for each question.")
-    st.info("Task 2: Reproduce the images below with [Geogebra](https://www.geogebra.org/calculator). Write down the answers for each question.")
-    st.image("images/circle1.png")
-    st.image("images/circle2.png")
-    st.image("images/circle3.png")
-    st.image("images/circle4.png")
-    st.image("images/circle5.png")
-    st.image("images/circle6.png")
-
+st.info('This revision lesson covers Algebra 1,2, 3 and Complex Numbers. Revise the topics as you go through the questions. Use the chatbot below for assistance.')
 
 
 with st.expander("Q1"):
