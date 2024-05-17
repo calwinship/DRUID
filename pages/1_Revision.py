@@ -63,29 +63,48 @@ with st.expander('Tasks'):
 
 
 with st.expander("Q1"):
-    st.write("Give this question a go if you have time. Send all work, including from the questions above.")
-    st.image("images/Exam23_2_Q4a.png")
-    st.image("images/Exam23_2_Q4b.png")
+    st.image("images/Exam19_1_Q5a.png")
+    st.image("images/Exam19_1_Q5b.png")
+    st.image("images/Exam19_1_Q5c.png")
 
-with st.expander("Q1 - Marking Scheme"):
-    st.image("images/MS23_2_Q4a.png")
-    st.image("images/MS23_2_Q4b.png")
+# with st.expander("Q1 - Marking Scheme"):
+    # st.image("images/MS19_1_Q5a.png")
+    # st.image("images/MS19_1_Q5b.png")
+    # st.image("images/MS19_1_Q5c.png")
 
 with st.expander("Q2"):
-    st.write("Give this question a go if you have time. Send all work, including from the questions above.")
-    st.image("images/Exam22_2_Q3a.png")
-    st.image("images/Exam22_2_Q3b.png")
+    st.image("images/Exam19_1_Q6a.png")
 
-with st.expander("Q2 - Marking Scheme"):
-    st.image("images/MS22_2_Q3a.png")
-    st.image("images/MS22_2_Q3b.png")
+# with st.expander("Q2 - Marking Scheme"):
+#     st.image("images/MS19_1_Q6a.png")
 
-# with st.expander("Q2"):
-#     st.image("images/Exam18_2_Q8.png")
+with st.expander("Q3"):
+    st.image("images/Exam19_1_Q1a.png")
+    st.image("images/Exam19_1_Q1b.png")
 
-# with st.expander("Q3"):
-#     st.image("images/Exam18_2_Q2a.png")
-#     st.image("images/Exam18_2_Q2b.png")
+with st.expander("Q4"):
+    st.image("images/Exam18_1_Q1a.png")
+    st.image("images/Exam18_1_Q1b.png")
+
+with st.expander("Q5"):
+    st.image("images/Exam23_1_Q1.png")
+
+with st.expander("Q6"):
+    st.image("images/Exam23_1_Q4a.png")
+    st.image("images/Exam23_1_Q4b.png")
+
+with st.expander("Q7"):
+    st.image("images/Exam17_1_Q5.png")
+
+with st.expander("Q8"):
+    st.image("images/Exam17_1_Q2.png")
+
+
+# with st.expander("Q2 - Marking Scheme"):
+#     st.image("images/MS19_1_Q6a.png")
+
+
+
 
 for message in prompt_template:
     if message["role"] != 'system':
