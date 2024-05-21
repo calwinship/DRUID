@@ -52,20 +52,24 @@ with st.expander("Q1"):
     st.image("images/Exam19_1_Q5b.png")
     st.image("images/Exam19_1_Q5c.png")
 
-# with st.expander("Q1 - Marking Scheme"):
-    # st.image("images/MS19_1_Q5a.png")
-    # st.image("images/MS19_1_Q5b.png")
-    # st.image("images/MS19_1_Q5c.png")
+with st.expander("Q1 - Marking Scheme"):
+    st.image("images/MS19_1_Q5a.png")
+    st.image("images/MS19_1_Q5b.png")
 
 with st.expander("Q2"):
     st.image("images/Exam19_1_Q6a.png")
 
-# with st.expander("Q2 - Marking Scheme"):
-#     st.image("images/MS19_1_Q6a.png")
+with st.expander("Q2 - Marking Scheme"):
+    st.image("images/MS19_1_Q6a.png")
+    st.image("images/MS19_1_Q6b.png")
 
 with st.expander("Q3"):
     st.image("images/Exam19_1_Q1a.png")
     st.image("images/Exam19_1_Q1b.png")
+
+with st.expander("Q3 - Marking Scheme"):
+    st.image("images/MS19_1_Q1a.png")
+    st.image("images/MS19_1_Q1b.png")
 
 with st.expander("Q4"):
     st.image("images/Exam18_1_Q1a.png")
