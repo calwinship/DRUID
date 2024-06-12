@@ -3,7 +3,7 @@ from utils import initialise_openai_client, get_prompt_template
 from config import CONFIG
 import json
 
-# config items
+# config itemss
 name = CONFIG["name"]
 llm_model = CONFIG["llm_model"]
 temperature = CONFIG["temperature"]
