@@ -6,7 +6,7 @@ st.image('logos/logo_trans_2.png')
 st.write(''' \n\n\n\n\n
             
             
-            D-RUID is an AI-powered personal tutor.\n\nNow. Every student can have access to a personalised learning experience to help them fulfil their potential.
+            DRUID is an AI-powered personal tutor.\n\nNow. Every student can have access to a personalised learning experience to help them fulfil their potential.
         
         '''
             
